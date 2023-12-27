@@ -3,10 +3,11 @@ using namespace std;
 
 int main(){
      try{
-         throw runtime_error("RUNTIME ERROR!");
+         throw runtime_error("RUNTIME ERROR1!"); //gets executed first
+         throw runtime_error("RUNTIME ERROR2!");
      }
      catch(runtime_error &r){ //more specific than exception -> it will get executed
-         cout<<"runtime\n";
+         cout<<"runtime\n"<<r.what();
      }
      catch(bad_alloc &e){
         cout<<"bad alloc\n";
