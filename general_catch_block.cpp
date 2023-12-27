@@ -15,10 +15,14 @@ int main(){
             throw x;
         }
     }
-    //if many if-statements evaluated to true, only the first exception is thrown
+    //if many if-statements evaluated to true where each has a throw statement, only the first exception is thrown
+//    catch(int n){
+//
+//    }
     catch(...){
         std::cout<<"General catch\n";
     }
     //for each try block there must be at least one catch block
+    //if you want to use multiple catch blocks then the general catch block must come last.
     return 0;
 }
