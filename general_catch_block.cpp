@@ -19,6 +19,6 @@ int main(){
     catch(...){
         std::cout<<"General catch\n";
     }
-
+    //for each try block there must be at least one catch block
     return 0;
 }
