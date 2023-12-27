@@ -3,4 +3,4 @@ project(C___Examples)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(C___Examples main.cpp)
+add_executable(C___Examples Desouky_Exception_Handling.cpp)
