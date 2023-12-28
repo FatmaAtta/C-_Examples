@@ -9,14 +9,19 @@ public:
     }
 };
 //function that throws an exception
+//no exception specification, thats the same as if all possible exceptions are listed
+//if not caught by a catch block then the program ends
 void throw_exception(){
     throw 20;
 }
 //trying throw list (specifying the types of exceptions that can be thrown)
+//empty exception specification list means this function shouldnt throw any exceptions
 void no_throw_list()throw(){
 //    throw "hello";
 }
 //doesnt work in c++17, and above maybe
+//this function can only throw exceptions of type int or char, the others will end the program
+//there are no automatic type conversions, if you send 5.0 it wont automatically be 5 and considered an int
 void throw_list() /*throw(int,char)*/{
     throw "hello";
 }
