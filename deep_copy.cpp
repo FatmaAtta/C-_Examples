@@ -31,6 +31,16 @@ public:
         data2=d2;
         *pointer=p;
     }
+    //destructor
+    //If a base class pointer points to a derived class object
+    //and we some time later use the delete operator to
+    //delete the object, then the derived class destructor is
+    //not called.
+    //no memory leak if the destructor is virtual in the base class
+    ~Data(){
+        delete pointer;
+        cout<<"goodbye\n";
+    }
 };
 
 int main(){
