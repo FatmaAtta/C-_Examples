@@ -4,6 +4,7 @@ using namespace std;
 class Data{
     int data1,data2;
     //default copy constructor will copy the address pointed to by the pointer and not the value pointed to by the pointer
+    //which means if we changed the value of object 1 after we copied it to object 2, object 2 will also change because they are both pointing to the same memory location
     int *pointer;
 public:
     Data(){
@@ -13,7 +14,13 @@ public:
         data1=d2.data1;
         data2=d2.data2;
         pointer=new int; //we need to allocate new memory
-        *pointer=*(d2.pointer); 
+        *pointer=*(d2.pointer);
+    }
+    Data& operator=(Data& d2){
+        data1=d2.data1;
+        data2=d2.data2;
+        pointer=new int; //we need to allocate new memory
+        *pointer=*(d2.pointer);
     }
     void display(){
         cout<<"data 1: "<<data1<<" data 2: "<<data2<<"\n";
@@ -32,5 +39,7 @@ int main(){
     Data d2(d1);
     d1.display();
     d2.display();
+    Data d3=d2;
+    d3.display();
     return 0;
 }
